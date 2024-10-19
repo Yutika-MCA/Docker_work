@@ -15,11 +15,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    echo 'Building Docker image...'
-                    // Build the Docker image
-                    sh 'docker build -t Yutika-MCA/Docker_work -f Dockerfile .'
-                }
+               bat "docker build -t yutika01/fimage ."
             }
         }
 
@@ -32,7 +28,7 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-               bat 'docker push yutika01/first'
+               bat 'docker push yutika01/fimage'
             }
         }
     }
