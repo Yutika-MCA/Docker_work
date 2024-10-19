@@ -2,7 +2,7 @@ pipeline {
     agent any  
 
     environment {
-       PATH="C:/Program Files/Docker/Docker/resources/bin:${env.PATH}"
+       PATH="C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
     }
 
     stages {
@@ -31,6 +31,13 @@ pipeline {
                bat 'docker push yutika01/fimage'
             }
         }
+
+        stage('Run Docker container'){
+        steps{
+            bat 'docker run -d --name cont1 yutika01/fimage'
+        }
+        }
+        
     }
     
 }
