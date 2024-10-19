@@ -18,7 +18,7 @@ pipeline {
                 script {
                     echo 'Building Docker image...'
                     // Build the Docker image
-                    sh 'docker build -t Yutika-MCA/Docker_work .'
+                    sh 'docker build -t Yutika-MCA/Docker_work -f Dockerfile .'
                 }
             }
         }
