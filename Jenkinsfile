@@ -37,6 +37,12 @@ pipeline {
             bat 'docker run -d --name cont1 yutika01/fimage'
         }
         }
+
+        stage('Final message') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
         
     }
     
