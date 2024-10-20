@@ -15,7 +15,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-               bat "docker build -t yutika01/Simage ."
+               bat "docker build -t yutika01/simage ."
             }
         }
 
@@ -28,13 +28,13 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-               bat 'docker push yutika01/Simage'
+               bat 'docker push yutika01/simage'
             }
         }
 
         stage('Run Docker container'){
         steps{
-            bat 'docker run -d --name cont2 yutika01/Simage'
+            bat 'docker run -d --name cont2 yutika01/simage'
         }
         }
 
